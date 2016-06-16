@@ -194,10 +194,10 @@ const ReactImageLightbox = React.createClass({
         this.resizeTimeout = null;
 
         // Used to determine when actions are triggered by the scroll wheel
-        this.wheelActionTimeout = null;
+        /*this.wheelActionTimeout = null;
         this.resetScrollTimeout = null;
         this.scrollX            = 0;
-        this.scrollY            = 0;
+        this.scrollY            = 0;*/
 
         // Used in panning zoomed images
         this.isDragging       = false;
@@ -316,7 +316,7 @@ const ReactImageLightbox = React.createClass({
     handleOuterMousewheel(event) {
         // Prevent scrolling of the background
         event.preventDefault();
-        event.stopPropagation();
+        event.stopPropagation();/*
 
         const xThreshold = Constant.WHEEL_MOVE_X_THRESHOLD;
         let actionDelay = 0;
@@ -358,10 +358,10 @@ const ReactImageLightbox = React.createClass({
             this.wheelActionTimeout = setTimeout(() => {
                 this.wheelActionTimeout = null;
             }, actionDelay);
-        }
+        }*/
     },
 
-    handleImageMouseWheel (event) {
+    /*handleImageMouseWheel (event) {
         event.preventDefault();
         const yThreshold = Constant.WHEEL_MOVE_Y_THRESHOLD;
 
@@ -381,7 +381,7 @@ const ReactImageLightbox = React.createClass({
                 event.clientY
             );
         }
-    },
+    },*/
 
     getOffsetXFromWindowCenter (x) {
         const windowWidth  = _getWindowWidth();
@@ -898,6 +898,7 @@ const ReactImageLightbox = React.createClass({
                         onWheel={this.handleImageMouseWheel}
                         style={imageStyle}
                         src={imageSrc}
+                        //width={fullSize ? width : null}
                         key={imageSrc + keyEndings[srcType]}
                     />
                 );
